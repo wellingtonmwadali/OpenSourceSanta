@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+  
+  * {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+  }
+}
+
+@layer components {
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm border border-slate-200 bg-white text-slate-600 cursor-pointer transition-all duration-150 hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 select-none;
+  }
+  .chip.active {
+    @apply border-blue-500 bg-blue-50 text-blue-700 font-medium;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200 shadow-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold text-sm transition-all duration-150 hover:bg-blue-700 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-white text-slate-600 text-sm font-medium transition-all duration-150 hover:border-slate-300 hover:bg-slate-50 active:scale-95;
+  }
+}
+
+@layer utilities {
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Mobile-friendly tap targets */
+  @media (max-width: 640px) {
+    .btn-primary,
+    .btn-secondary {
+      @apply min-h-[44px];
+    }
+    
+    .chip {
+      @apply min-h-[36px];
+    }
+  }
+}
