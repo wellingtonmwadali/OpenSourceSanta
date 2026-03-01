@@ -408,7 +408,181 @@ export default function Home() {
   // ─── Form Screen ───────────────────────────────────────────────────────
   return (
     <main className="min-h-screen bg-slate-50 flex flex-col">
-      <div className="max-w-xl mx-auto w-full px-4 py-10 flex-1 flex flex-col">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white">
+        <div className="max-w-4xl mx-auto px-4 py-16 md:py-24 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-sm font-medium px-4 py-2 rounded-full mb-6 border border-white/20">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Powered by GitHub's 100M+ Repositories
+          </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            Stop Searching.<br />Start Contributing.
+          </h1>
+          <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Finding the right open source project shouldn't take hours. Tell us your skills, 
+            get matched with 5 active projects that genuinely need contributors like you.
+          </p>
+          <button
+            onClick={() => {
+              const formSection = document.getElementById('get-started-form');
+              formSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-200 inline-flex items-center gap-2"
+          >
+            Get Started Free
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </button>
+          <p className="text-blue-200 text-sm mt-4">No signup • No AI costs • Instant results</p>
+        </div>
+      </div>
+
+      {/* Why Contribute Section */}
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 py-16 md:py-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Why Contribute to Open Source?
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Every line of code you contribute builds your future. Here's what you gain.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Build Real-World Credibility</h3>
+              <p className="text-slate-600">
+                Forget toy projects. Contribute to production codebases used by thousands. 
+                Employers don't just want to see code—they want to see impact.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Accelerate Your Growth</h3>
+              <p className="text-slate-600">
+                Reading production code and getting feedback from senior maintainers is worth 
+                years of tutorials. You'll learn patterns, tools, and practices that actually matter.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Network With Experts</h3>
+              <p className="text-slate-600">
+                Your GitHub profile is your professional network. Every merged PR connects you 
+                with maintainers, opens doors to opportunities, and builds your reputation.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8 border border-orange-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Stand Out From the Crowd</h3>
+              <p className="text-slate-600">
+                Most developers have private GitHub profiles. Be different. Show hiring managers 
+                you can collaborate, take feedback, and ship code that matters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works Section */}
+      <div className="bg-slate-50 border-b border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 py-16 md:py-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Three Simple Steps to Your First PR
+            </h2>
+            <p className="text-lg text-slate-600">
+              No account needed. No complex setup. Start discovering in 60 seconds.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* Step 1 */}
+            <div className="flex gap-6 items-start">
+              <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                1
+              </div>
+              <div className="flex-1 pt-2">
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Share Your Skills</h3>
+                <p className="text-slate-600">
+                  Tell us your skill level, programming languages, and what areas interest you. 
+                  Takes less than a minute. No signup, no email required.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="flex gap-6 items-start">
+              <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                2
+              </div>
+              <div className="flex-1 pt-2">
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Get Matched Intelligently</h3>
+                <p className="text-slate-600">
+                  Our engine searches GitHub's universe of repositories, validates activity, 
+                  checks for welcoming communities, and surfaces projects perfect for your profile.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex gap-6 items-start">
+              <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                3
+              </div>
+              <div className="flex-1 pt-2">
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Start Contributing Today</h3>
+                <p className="text-slate-600">
+                  Jump straight to GitHub repositories with clear first steps. Browse issues, 
+                  read docs, make your first contribution. We show you exactly where to begin.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => {
+                const formSection = document.getElementById('get-started-form');
+                formSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2"
+            >
+              Find My Projects Now
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Form Section */}
+      <div className="max-w-xl mx-auto w-full px-4 py-10 flex-1 flex flex-col" id="get-started-form">
         {/* Brand */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
