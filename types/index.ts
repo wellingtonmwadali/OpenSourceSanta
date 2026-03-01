@@ -4,7 +4,7 @@ export interface UserProfile {
   level: SkillLevel | "";
   languages: string[];
   interests: string[];
-  bio: string;
+  bio?: string;
 }
 
 export interface Project {
