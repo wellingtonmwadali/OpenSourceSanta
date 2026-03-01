@@ -246,7 +246,7 @@ export default function Home() {
   const canNext2 = profile.languages.length > 0;
   const canSubmit = profile.interests.length > 0;
 
-  const projectLanguages = ["all", ...new Set(projects.map((p) => p.language))];
+  const projectLanguages = ["all", ...Array.from(new Set(projects.map((p) => p.language)))];
 
   // ─── Loading Screen ────────────────────────────────────────────────────
   if (appState === "loading") {
